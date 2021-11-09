@@ -1,14 +1,13 @@
 package com.deligkarisk;
 
-public abstract class Team implements Comparable {
+public abstract class Team implements Comparable<Team> {
     int wins = 0;
     int loses = 0;
     int ties =0;
     String name;
 
     @Override
-    public int compareTo(Object o) {
-        Team otherTeam = (Team) o;
+    public int compareTo(Team otherTeam) {
         return this.wins - otherTeam.wins;
     }
 
@@ -34,10 +33,6 @@ public abstract class Team implements Comparable {
 
     public void setTies(int ties) {
         this.ties = ties;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setName(String name) {
